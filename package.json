@@ -1,0 +1,16 @@
+{
+  "name": "vue-adblock-detect",
+  "version": "0.0.1",
+  "description": "Detect adblock in vue.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Vue",
+    "Vue.js",
+    "adblock"
+  ],
+  "author": "Md. Atiquzzaman Soikat <atik.aiub@gmail.com>",
+  "license": "ISC"
+}
