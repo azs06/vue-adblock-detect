@@ -12,5 +12,10 @@
     "adblock"
   ],
   "author": "Md. Atiquzzaman Soikat <atik.aiub@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/owner/project#readme",
+  "repository": {
+  "type" : "git",
+  "url" : "https://github.com/azs06/vue-adblock-detect.git"
+  }
 }
