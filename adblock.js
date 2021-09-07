@@ -1,16 +1,13 @@
-export default function(){
-  return new Promise((resolve, reject) => {
-    const element = document.createElement("div");
-    element.classList.add('adBanner');
-    element.style.cssText = 'height: 1px; width: 1px; background-color: transparent';
-    document.body.appendChild(element);
-    window.setTimeout(()=>{
-      if(document.querySelector('.adBanner').clientHeight === 0){
-        resolve(true)
-      }else{
-        resolve(false)
-      }
-      document.body.removeChild(element);
-    }, 20)
-  })
+export default async function detectAdBlock() {
+  let adBlockEnabled = false
+  const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/show_ads.js';
+  try {
+    await fetch(new Request(googleAdUrl), {
+      method: 'HEAD',
+      mode: 'no-cors'
+    }).catch(_ => adBlockEnabled = true)
+  } catch (e) {
+    adBlockEnabled = true
+  }
+  return adBlockEnabled;
 }

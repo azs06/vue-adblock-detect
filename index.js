@@ -1,4 +1,3 @@
-
 import detectAdBlock from './adblock';
 const mixin =  {
   methods: {
