@@ -1,4 +1,5 @@
 ### Simple ad blocker detection mixin for vue.js
+
 ```
 <script>
 import VueAdBlockDetect from 'vue-adblock-detect';
@@ -16,3 +17,7 @@ export default{
 }
 </script>
 ```
+
+### Updated version for Vue 3
+
+<https://github.com/azs06/use-adblock-detector>
