@@ -1,13 +1,13 @@
-export default async function detectAdBlock() {
-  let adBlockEnabled = false
-  const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/show_ads.js';
-  try {
-    await fetch(new Request(googleAdUrl), {
-      method: 'HEAD',
-      mode: 'no-cors'
-    }).catch(_ => adBlockEnabled = true)
-  } catch (e) {
-    adBlockEnabled = true
-  }
-  return adBlockEnabled;
+export default function detectAdBlock() {
+  return new Promise((resolve) => {
+    const element = document.createElement('div');
+    element.className = 'adBanner';
+    element.style.cssText = 'height: 1px; width: 1px; background-color: transparent;';
+    document.body.appendChild(element);
+    setTimeout(() => {
+      const isBlocked = element.clientHeight === 0;
+      document.body.removeChild(element);
+      resolve(isBlocked);
+    }, 500);
+  });
 }
